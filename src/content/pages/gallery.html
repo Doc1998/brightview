@@ -1,0 +1,869 @@
+---
+title: 'Gallery | Our Work — BrightView Roof Cleaning'
+description: 'See real results from BrightView — before and after roof cleaning, roof painting, moss removal and power washing. Browse our gallery of completed jobs.'
+preloadImg: '/assets/images/img1.jpeg'
+permalink: '/gallery/'
+tags: 'sitemap'
+eleventyNavigation:
+  key: Gallery
+  order: 400
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+
+<style>
+  /* =============================================
+     GALLERY PAGE — BrightView
+     ============================================= */
+  :root {
+    --navy:    #0B1F3A;
+    --navy-mid:#122848;
+    --blue:    #1565C0;
+    --sky:     #2196F3;
+    --sky-lt:  #E3F2FD;
+    --amber:   #F59E0B;
+    --white:   #FFFFFF;
+    --off:     #F4F7FA;
+    --text:    #1A2740;
+    --muted:   #607080;
+    --border:  #D0DCE8;
+    --radius:  6px;
+    --shadow:  0 4px 24px rgba(11,31,58,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+  .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+
+  .btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: var(--radius);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  .btn-primary { background: var(--amber); color: var(--navy); }
+  .btn-primary:hover { background: #D97706; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* ============================================
+     PAGE HERO
+     ============================================ */
+  .page-hero {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(135deg, rgba(11,31,58,0.90) 0%, rgba(18,40,72,0.75) 60%, rgba(21,101,192,0.5) 100%),
+      url('/assets/images/img1.jpeg') center center / cover no-repeat;
+    padding: 120px 0 72px;
+    margin-top: 10px;
+  }
+  .page-hero-content { color: var(--white); max-width: 640px; }
+  .page-hero-content .section-label { color: #90CAF9; }
+  .page-hero-content h1 {
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+  .page-hero-content h1 em { font-style: normal; color: var(--sky); }
+  .page-hero-content p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.72;
+    max-width: 520px;
+  }
+  .hero-breadcrumb {
+    position: absolute;
+    bottom: 20px;
+    left: 0; right: 0;
+  }
+  .hero-breadcrumb .container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero-breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+  .hero-breadcrumb a:hover { color: var(--sky); }
+  .hero-breadcrumb span { color: rgba(255,255,255,0.75); }
+
+  /* ============================================
+     FILTER BAR
+     ============================================ */
+  .filter-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 68px;
+    z-index: 50;
+  }
+  .filter-inner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  .filter-count {
+    margin-left: auto;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .filter-tab {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .filter-tab:hover { border-color: var(--sky); color: var(--sky); }
+  .filter-tab.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+  }
+
+  /* ============================================
+     GALLERY GRID
+     ============================================ */
+  .gallery-section {
+    padding: 52px 0 80px;
+    background: var(--off);
+  }
+  .gallery-grid {
+    columns: 3;
+    column-gap: 20px;
+  }
+  .gallery-card {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(11,31,58,0.18);
+  }
+
+  /* Image wrap */
+  .gallery-card-img {
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery-card-img img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .gallery-card:hover .gallery-card-img img {
+    transform: scale(1.04);
+  }
+
+  /* Zoom icon */
+  .gallery-zoom {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 2;
+  }
+  .gallery-card:hover .gallery-zoom { opacity: 1; transform: scale(1); }
+  .gallery-zoom svg { width: 15px; height: 15px; stroke: var(--navy); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Badge */
+  .gallery-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 2;
+    backdrop-filter: blur(6px);
+  }
+  .badge-before  { background: rgba(185,28,28,0.85);  color: #fff; }
+  .badge-after   { background: rgba(21,128,61,0.85);  color: #fff; }
+  .badge-work    { background: rgba(11,31,58,0.8);    color: #fff; }
+  .badge-paint   { background: rgba(245,158,11,0.9);  color: var(--navy); }
+
+  /* Card info */
+  .gallery-card-info {
+    padding: 16px 18px 18px;
+  }
+  .gallery-card-info h3 {
+    font-size: 1rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .gallery-card-info p {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .meta-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--sky-lt);
+    color: var(--blue);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .meta-tag.paint { background: #FEF3C7; color: #92400E; }
+  .meta-tag.power { background: #F0FDF4; color: #166534; }
+
+  /* ============================================
+     LIGHTBOX
+     ============================================ */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(7,19,31,0.96);
+    backdrop-filter: blur(16px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-inner {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+  .lightbox-img-wrap {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    line-height: 0;
+  }
+  #lightbox-img {
+    width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #0d1e2e;
+  }
+  .lightbox-caption {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 3;
+  }
+  .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+  .lightbox-prev { left: -56px; }
+  .lightbox-next { right: -56px; }
+  .lightbox-nav svg { width: 18px; height: 18px; stroke: var(--white); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ============================================
+     CTA
+     ============================================ */
+  .gallery-cta {
+    padding: 80px 0;
+    background: var(--navy);
+    text-align: center;
+    color: var(--white);
+  }
+  .gallery-cta h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .gallery-cta h2 span { color: var(--amber); }
+  .gallery-cta p {
+    color: rgba(255,255,255,0.65);
+    font-size: 1rem;
+    max-width: 460px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+  }
+  .cta-call-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 14px 28px;
+    margin-top: 20px;
+  }
+  .cta-call-block .phone-ico {
+    width: 36px; height: 36px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .cta-call-block a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .cta-call-block span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 900px) {
+    .gallery-grid { columns: 2; }
+    .lightbox-prev { left: -44px; }
+    .lightbox-next { right: -44px; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { columns: 1; }
+    .lightbox-nav { display: none; }
+    .filter-count { display: none; }
+  }
+</style>
+
+<!-- =============================================
+     PAGE HERO
+     ============================================= -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label">Our Work</span>
+      <h1>The <em>BrightView</em> Results</h1>
+      <p>Real jobs, real results. Browse before and after photos, roof painting transformations, and completed work from our team.</p>
+    </div>
+  </div>
+  <div class="hero-breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Gallery</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FILTER BAR
+     ============================================= -->
+<div class="filter-bar">
+  <div class="container filter-inner">
+    <button class="filter-tab active" data-filter="all">All Work</button>
+    <button class="filter-tab" data-filter="roof-cleaning">Roof Cleaning</button>
+    <button class="filter-tab" data-filter="roof-painting">Roof Painting</button>
+    <button class="filter-tab" data-filter="before-after">Before & After</button>
+    <button class="filter-tab" data-filter="power-washing">Power Washing</button>
+    <span class="filter-count"><span id="gallery-count">12</span> photos</span>
+  </div>
+</div>
+
+<!-- =============================================
+     GALLERY GRID
+     ============================================= -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- Before BrightView -->
+      <div class="gallery-card"
+           data-category="before-after roof-cleaning"
+           data-caption="Before — Heavy moss build-up on roof tiles"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/beforeBV.jpeg" alt="Roof before cleaning — heavy moss growth" loading="lazy">
+          <span class="gallery-badge badge-before">Before</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Before Treatment</h3>
+          <p>Heavy moss and algae growth covering the full roof surface</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- After BrightView -->
+      <div class="gallery-card"
+           data-category="before-after roof-cleaning"
+           data-caption="After — Soft wash roof clean complete"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/afterbv.jpeg" alt="Roof after BrightView soft wash clean" loading="lazy">
+          <span class="gallery-badge badge-after">After</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>After Treatment</h3>
+          <p>Clean, treated roof — moss removed, biocide applied for lasting results</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- b4BV — Before roof paint -->
+      <div class="gallery-card"
+           data-category="before-after roof-painting"
+           data-caption="Before — Faded, weathered tiles prior to painting"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/b4BV.jpeg" alt="Roof before painting — faded and weathered tiles" loading="lazy">
+          <span class="gallery-badge badge-before">Before</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Before Roof Painting</h3>
+          <p>Faded, weathered tiles in need of a full clean, prime and coat</p>
+          <div class="card-meta">
+            <span class="meta-tag paint">Roof Painting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- A4TRbv — After roof paint -->
+      <div class="gallery-card"
+           data-category="before-after roof-painting"
+           data-caption="After — Roof painting complete, fresh coat applied"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/A4TRbv.jpeg" alt="Roof after BrightView painting — fresh professional coat" loading="lazy">
+          <span class="gallery-badge badge-paint">After Paint</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>After Roof Painting</h3>
+          <p>Premium weatherproof coating applied — transformed finish that lasts</p>
+          <div class="card-meta">
+            <span class="meta-tag paint">Roof Painting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img1 -->
+      <div class="gallery-card"
+           data-category="roof-cleaning"
+           data-caption="Soft wash roof cleaning in progress"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img1.jpeg" alt="Soft wash roof cleaning" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Roof Clean</h3>
+          <p>Full soft wash treatment with biocide application</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img2 -->
+      <div class="gallery-card"
+           data-category="roof-painting"
+           data-caption="Roof painting — two coat application"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img2.jpeg" alt="Roof painting — two coat application" loading="lazy">
+          <span class="gallery-badge badge-paint">Roof Paint</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Roof Painting</h3>
+          <p>Full prep, prime, and two-coat finish on concrete tiles</p>
+          <div class="card-meta">
+            <span class="meta-tag paint">Roof Painting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img3 -->
+      <div class="gallery-card"
+           data-category="roof-cleaning"
+           data-caption="Moss removal — tiles cleared and treated"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img3.jpeg" alt="Moss removal and roof cleaning completed" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Moss Removal</h3>
+          <p>Tiles cleared of moss and lichen, biocide treatment applied</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img4 -->
+      <div class="gallery-card"
+           data-category="power-washing"
+           data-caption="Driveway power wash — before and after"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img4.jpeg" alt="Driveway power washing completed" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Driveway Power Wash</h3>
+          <p>Block paving restored and algae fully removed</p>
+          <div class="card-meta">
+            <span class="meta-tag power">Power Washing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img5 -->
+      <div class="gallery-card"
+           data-category="roof-painting"
+           data-caption="Roof coating — finished result"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img5.jpeg" alt="Completed roof painting and coating" loading="lazy">
+          <span class="gallery-badge badge-paint">Roof Paint</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Roof Coating</h3>
+          <p>Weatherproof coating applied — anti-algae formula included</p>
+          <div class="card-meta">
+            <span class="meta-tag paint">Roof Painting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img6 -->
+      <div class="gallery-card"
+           data-category="roof-cleaning"
+           data-caption="Full roof clean — completed"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img6.jpeg" alt="Full roof clean completed by BrightView" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Full Roof Clean</h3>
+          <p>Soft wash treatment on a detached home — tiles and ridge caps</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img7 -->
+      <div class="gallery-card"
+           data-category="power-washing"
+           data-caption="Patio power wash — algae and staining removed"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img7.jpeg" alt="Patio power washing completed" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Patio Power Wash</h3>
+          <p>Natural stone patio cleaned and algae staining fully removed</p>
+          <div class="card-meta">
+            <span class="meta-tag power">Power Washing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- img8 -->
+      <div class="gallery-card"
+           data-category="roof-cleaning roof-painting"
+           data-caption="Clean and paint — full exterior roof treatment"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img8.jpeg" alt="Roof clean and paint combined service" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Clean & Paint</h3>
+          <p>Full roof treatment — moss removal followed by a two-coat paint finish</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+            <span class="meta-tag paint">Roof Painting</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     LIGHTBOX
+     ============================================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- =============================================
+     CTA
+     ============================================= -->
+<section class="gallery-cta">
+  <div class="container">
+    <h2>Like What <span>You See?</span></h2>
+    <p>Get in touch for a free, no-obligation quote and let us do the same for your home.</p>
+    <a href="/#quote" class="btn btn-primary" style="font-size:1.1rem; padding:15px 36px;">Get a Free Quote</a>
+    <br>
+    <div class="cta-call-block">
+      <div class="phone-ico">📞</div>
+      <div>
+        <span>Call us directly</span>
+        <a href="tel:+353894046483">089 404 6483</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SCRIPTS
+     ============================================= -->
+<script>
+  // === FILTER ===
+  const tabs  = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.gallery-card');
+  const countEl = document.getElementById('gallery-count');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const cats = card.dataset.category || '';
+        const show = filter === 'all' || cats.includes(filter);
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      countEl.textContent = visible;
+    });
+  });
+
+  // === LIGHTBOX ===
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  let currentIdx  = 0;
+
+  function getVisible() {
+    return [...cards].filter(c => c.style.display !== 'none');
+  }
+
+  function openLightbox(card) {
+    const visible = getVisible();
+    currentIdx = visible.indexOf(card);
+    const img = card.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = card.dataset.caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  function navigate(dir) {
+    const visible = getVisible();
+    currentIdx = (currentIdx + dir + visible.length) % visible.length;
+    const card = visible[currentIdx];
+    const img  = card.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = card.dataset.caption || '';
+  }
+
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-prev').addEventListener('click', () => navigate(-1));
+  document.getElementById('lightbox-next').addEventListener('click', () => navigate(1));
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  });
+</script>
+
+{% endblock %}

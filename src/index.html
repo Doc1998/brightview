@@ -1,0 +1,1473 @@
+---
+title: 'BrightView | Roof Cleaning Wexford'
+description: 'BrightView provides expert roof cleaning and roof painting in Wexford. Safe soft wash, moss removal, roof coating & power washing. Fully insured local specialists. Call 089 404 6483.'
+preloadImg: '/assets/images/hero.jpg'
+permalink: '/'
+tags: 'sitemap'
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/home-base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- =============================================
+     SCHEMA MARKUP — paste into <head> or base layout
+     ============================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "BrightView Roof Cleaning",
+  "description": "Professional roof cleaning and roof painting services in Wexford, Ireland. Soft wash moss removal, roof coating, power washing and exterior cleaning.",
+  "url": "https://www.brightview.ie",
+  "telephone": "+353894046483",
+  "areaServed": [
+    { "@type": "City", "name": "Wexford" },
+    { "@type": "City", "name": "Enniscorthy" },
+    { "@type": "City", "name": "Gorey" },
+    { "@type": "City", "name": "New Ross" },
+    { "@type": "City", "name": "Rosslare" },
+    { "@type": "City", "name": "Bunclody" },
+    { "@type": "City", "name": "Ferns" },
+    { "@type": "AdministrativeArea", "name": "County Wexford" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roof Cleaning & Painting Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Cleaning Wexford" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Painting Wexford" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Moss Removal Wexford" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Power Washing Wexford" } }
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+  /* =============================================
+     DESIGN SYSTEM — BrightView
+     Bold, confident, clean. Navy + sky + white.
+     Barlow Condensed for display, Lato for body.
+     ============================================= */
+  :root {
+    --navy:    #0B1F3A;
+    --navy-mid:#122848;
+    --blue:    #1565C0;
+    --sky:     #2196F3;
+    --sky-lt:  #E3F2FD;
+    --amber:   #F59E0B;
+    --white:   #FFFFFF;
+    --off:     #F4F7FA;
+    --text:    #1A2740;
+    --muted:   #607080;
+    --border:  #D0DCE8;
+    --radius:  6px;
+    --shadow:  0 4px 24px rgba(11,31,58,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.65;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  /* ---- BUTTONS ---- */
+  .btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: var(--radius);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--navy);
+  }
+  .btn-primary:hover { background: #D97706; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+  .btn-outline:hover { background: var(--white); color: var(--navy); }
+  .btn-blue {
+    background: var(--sky);
+    color: var(--white);
+  }
+  .btn-blue:hover { background: var(--blue); transform: translateY(-2px); }
+
+  /* ---- SECTION LABELS ---- */
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* ============================================
+     NAVIGATION
+     ============================================ */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(11,31,58,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .nav-logo span { color: var(--sky); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.82);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--sky); }
+  .nav-cta {
+    background: var(--amber);
+    color: var(--navy) !important;
+    padding: 9px 20px;
+    border-radius: var(--radius);
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: #D97706 !important; color: var(--navy) !important; }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(135deg, rgba(11,31,58,0.88) 0%, rgba(18,40,72,0.75) 60%, rgba(21,101,192,0.5) 100%),
+      url('/assets/images/hero.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-content { color: var(--white); }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(33,150,243,0.18);
+    border: 1px solid rgba(33,150,243,0.4);
+    color: #90CAF9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+  }
+  .hero-badge::before { content: "★"; color: var(--amber); }
+  .hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+    color: var(--white);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--sky);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.82);
+    max-width: 520px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .trust-strip {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+  .trust-item::before { content: "✓"; color: var(--amber); font-size: 1rem; }
+
+  /* Hero form */
+  .hero-form-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
+  .hero-form-card h3 {
+    font-size: 1.55rem;
+    color: var(--navy);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .hero-form-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 22px;
+  }
+  .form-group { margin-bottom: 14px; }
+  .form-group label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 5px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--sky);
+  }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--blue); transform: translateY(-2px); }
+
+  /* ============================================
+     STATS BAR
+     ============================================ */
+  .stats-bar {
+    background: var(--navy);
+    padding: 28px 0;
+  }
+  .stats-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--amber);
+    display: block;
+  }
+  .stat-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ============================================
+     SERVICES
+     ============================================ */
+  .services {
+    padding: 90px 0;
+    background: var(--off);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+  .section-header h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-header p {
+    color: var(--muted);
+    font-size: 1.02rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(11,31,58,0.16); }
+  .service-card.featured { grid-column: 1 / -1; flex-direction: row; }
+  .service-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: var(--sky-lt);
+  }
+  .service-card.featured .service-img {
+    width: 48%;
+    height: auto;
+    flex-shrink: 0;
+  }
+  .service-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--sky-lt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  .service-card.featured .service-icon { background: var(--navy); }
+  .service-body h3 {
+    font-size: 1.5rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .service-body p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  .service-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sky);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .service-link::after { content: "→"; }
+  .service-link:hover { gap: 10px; }
+  .service-card.featured .service-body h3 { font-size: 2rem; }
+  .painting-tag {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+  }
+
+  /* ============================================
+     WHY CHOOSE
+     ============================================ */
+  .why {
+    padding: 90px 0;
+    background: var(--white);
+  }
+  .why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .why-img-wrap {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .why-img-wrap img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    background: var(--sky-lt);
+  }
+  .why-accent {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 24px;
+    border-radius: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  .why-accent strong { display: block; font-size: 2.2rem; color: var(--amber); }
+  .why-accent span { font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.8; }
+  .why-content h2 {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .why-content > p {
+    color: var(--muted);
+    margin-bottom: 32px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .why-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.97rem;
+    color: var(--text);
+  }
+  .why-check {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--sky-lt);
+    color: var(--blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .why-list li strong { color: var(--navy); }
+
+  /* ============================================
+     ROOF PAINTING FEATURE SECTION
+     ============================================ */
+  .painting-feature {
+    padding: 90px 0;
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  .painting-feature::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(33,150,243,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .painting-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .painting-content .section-label { color: var(--amber); }
+  .painting-content h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .painting-content h2 span { color: var(--sky); }
+  .painting-content p {
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    margin-bottom: 16px;
+    font-size: 0.98rem;
+  }
+  .painting-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0 36px;
+  }
+  .paint-benefit {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .paint-benefit strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.98rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 4px;
+  }
+  .paint-benefit span {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .painting-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .painting-img img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    background: #1a3a5c;
+  }
+
+  /* ============================================
+     BEFORE & AFTER
+     ============================================ */
+  .before-after {
+    padding: 90px 0;
+    background: var(--off);
+  }
+  .ba-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 52px;
+  }
+  .ba-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--white);
+  }
+  .ba-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 200px;
+    position: relative;
+  }
+  .ba-half {
+    overflow: hidden;
+  }
+  .ba-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #c8d8e8;
+  }
+  .ba-half.after img { background: #a8c8a0; }
+  .ba-divider {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--white);
+    z-index: 2;
+    transform: translateX(-50%);
+  }
+  .ba-divider::after {
+    content: '↔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--white);
+    color: var(--navy);
+    font-size: 0.7rem;
+    padding: 4px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ba-info {
+    padding: 18px 20px;
+  }
+  .ba-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .ba-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .ba-tag.before { background: #FEE2E2; color: #B91C1C; }
+  .ba-tag.after  { background: #DCFCE7; color: #15803D; }
+  .ba-info h4 {
+    font-size: 1.05rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .ba-info p { font-size: 0.85rem; color: var(--muted); }
+
+  /* ============================================
+     SERVICE AREAS
+     ============================================ */
+  .areas {
+    padding: 80px 0;
+    background: var(--white);
+  }
+  .areas-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .areas-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .areas-content p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .area-tag {
+    background: var(--sky-lt);
+    color: var(--blue);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 1.5px solid rgba(33,150,243,0.25);
+    transition: all 0.2s;
+  }
+  .area-tag:hover { background: var(--sky); color: var(--white); }
+  .area-map-placeholder {
+    background: var(--off);
+    border-radius: 10px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border);
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .area-map-placeholder span { font-size: 2.5rem; }
+
+  /* ============================================
+     TESTIMONIALS
+     ============================================ */
+  .testimonials {
+    padding: 90px 0;
+    background: var(--off);
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 52px;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .review-card::before {
+    content: '"';
+    font-family: Georgia, serif;
+    font-size: 5rem;
+    color: var(--sky-lt);
+    line-height: 1;
+    position: absolute;
+    top: 16px;
+    left: 24px;
+  }
+  .stars {
+    color: var(--amber);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .review-text {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
+  .reviewer-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--sky-lt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    color: var(--blue);
+    font-size: 1rem;
+  }
+  .reviewer-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+  }
+  .reviewer-loc { font-size: 0.8rem; color: var(--muted); }
+
+  /* ============================================
+     FINAL CTA
+     ============================================ */
+  .final-cta {
+    padding: 100px 0;
+    background:
+      linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(21,101,192,0.85) 100%),
+      url('/assets/images/cta-bg.jpg') center / cover no-repeat;
+    text-align: center;
+    color: var(--white);
+  }
+  .final-cta h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .final-cta h2 span { color: var(--amber); }
+  .final-cta p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.78);
+    max-width: 540px;
+    margin: 0 auto 38px;
+    line-height: 1.7;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .cta-call-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 14px 28px;
+  }
+  .cta-call-block .phone-ico {
+    width: 36px;
+    height: 36px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .cta-call-block a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .cta-call-block span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  .site-footer {
+    background: #07131F;
+    padding: 50px 0 28px;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  .footer-brand .nav-logo { font-size: 1.5rem; margin-bottom: 12px; }
+  .footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.45);
+    max-width: 280px;
+  }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 16px;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .footer-col ul li a {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--sky); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-form-card { max-width: 540px; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card.featured { flex-direction: column; }
+    .service-card.featured .service-img { width: 100%; height: 240px; }
+    .why-inner, .painting-inner, .areas-inner { grid-template-columns: 1fr; }
+    .ba-grid, .reviews-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .painting-benefits { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+
+<!-- =============================================
+     NAV
+     ============================================= -->
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">Bright<span>View</span></a>
+    <ul class="nav-links">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="#roof-painting">Roof Painting</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="tel:+353894046483" class="nav-cta">📞 089 404 6483</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+
+    <div class="hero-content">
+      <div class="hero-badge">Wexford's Roof Specialists</div>
+      <h1>
+        Roof Cleaning
+        <em>Wexford</em>
+      </h1>
+      <p class="hero-sub">
+        BrightView delivers professional <strong>roof cleaning</strong>, expert <strong>roof painting</strong>, and <strong>power washing</strong> across Wexford. Soft-wash technology. Lasting results. Fully insured.
+      </p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+        <a href="tel:+353894046483" class="btn btn-outline">📞 089 404 6483</a>
+      </div>
+      <div class="trust-strip">
+        <span class="trust-item">Fully Insured</span>
+        <span class="trust-item">Local Wexford Company</span>
+        <span class="trust-item">Free Quotes</span>
+        <span class="trust-item">Soft Wash Specialists</span>
+      </div>
+    </div>
+
+    <div class="hero-form-card" id="quote">
+      <h3>Get Your Free Quote</h3>
+      <p>We'll get back to you within a few hours</p>
+      <form action="/thank-you/" method="POST" name="brightview-quote" netlify>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your number" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="address">Address / Eircode</label>
+          <input type="text" id="address" name="address" placeholder="Your address or Eircode">
+        </div>
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service…</option>
+            <option value="roof-cleaning">Roof Cleaning</option>
+            <option value="roof-painting">Roof Painting & Coating</option>
+            <option value="moss-removal">Moss & Algae Removal</option>
+            <option value="power-washing">Power Washing</option>
+            <option value="gutter-cleaning">Gutter Cleaning</option>
+            <option value="fascia-soffit">Fascia & Soffit Cleaning</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Any extra details…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Get My Free Quote →</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     STATS BAR
+     ============================================= -->
+<div class="stats-bar">
+  <div class="container stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Roofs Cleaned</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Fully Insured</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5★</span>
+      <span class="stat-label">Rated on Google</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     SERVICES
+     ============================================= -->
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">What We Do</span>
+      <h2>Roof Cleaning & Exterior Services in Wexford</h2>
+      <p>From soft-wash moss removal to full roof painting and power washing, BrightView covers every aspect of your roof and exterior care.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- FEATURED: Roof Painting -->
+      <div class="service-card featured" id="roof-painting">
+        <img class="service-img" src="/assets/images/roof-painting.jpg" alt="Roof painting Wexford — BrightView" loading="lazy">
+        <div class="service-body">
+          <span class="painting-tag">★ Most Popular</span>
+          <div class="service-icon" style="background:var(--navy);">🎨</div>
+          <h3>Roof Painting Wexford</h3>
+          <p>
+            A freshly painted roof transforms your home's kerb appeal and adds years to the life of your tiles. At BrightView, we use premium weatherproof roof coatings designed to withstand Ireland's climate. Our roof painting service in Wexford includes a full clean and prep, application of a specialist roof primer, and two coats of long-lasting roof paint — leaving your roof looking brand new and fully protected against moss, algae, and water ingress for years to come.
+          </p>
+          <a href="/services/" class="service-link">Learn more about Roof Painting</a>
+        </div>
+      </div>
+
+      <!-- Roof Cleaning -->
+      <div class="service-card">
+        <img class="service-img" src="/assets/images/roof-cleaning.jpg" alt="Roof cleaning Wexford" loading="lazy">
+        <div class="service-body">
+          <div class="service-icon">🏠</div>
+          <h3>Roof Cleaning Wexford</h3>
+          <p>
+            Our soft-wash roof cleaning service safely removes moss, lichen, and algae from your tiles without the risk of pressure washing damage. We treat the root cause — not just the surface — so your roof stays cleaner for longer. Ideal for all tile types including concrete, slate, and clay.
+          </p>
+          <a href="/services/" class="service-link">View all services</a>
+        </div>
+      </div>
+
+      <!-- Power Washing -->
+      <div class="service-card">
+        <img class="service-img" src="/assets/images/power-washing.jpg" alt="Power washing Wexford" loading="lazy">
+        <div class="service-body">
+          <div class="service-icon">💧</div>
+          <h3>Power Washing Wexford</h3>
+          <p>
+            From driveways and patios to paths and exterior walls, BrightView's power washing service blasts away built-up dirt, algae, and staining. We use professional-grade equipment to restore surfaces to their original condition — fast, effective, and with lasting results.
+          </p>
+          <a href="/services/" class="service-link">View all services</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     ROOF PAINTING FEATURE
+     ============================================= -->
+<section class="painting-feature">
+  <div class="container painting-inner">
+
+    <div class="painting-content">
+      <span class="section-label">Expert Roof Painters</span>
+      <h2>Why Roof Painting is the <span>Smart Investment</span></h2>
+      <p>
+        Most homeowners don't realise that a professionally painted roof can add significant value to their property while slashing future maintenance costs. Roof paint acts as a waterproof seal, locking out moisture and preventing the moss and algae growth that degrades tiles over time.
+      </p>
+      <p>
+        BrightView uses only UV-resistant, breathable roof coatings approved for the Irish climate. Our painters are experienced on all tile types and every job includes a written quote, full prep work, and a satisfaction guarantee.
+      </p>
+      <div class="painting-benefits">
+        <div class="paint-benefit">
+          <strong>15+ Year Lifespan</strong>
+          <span>Quality coatings that last</span>
+        </div>
+        <div class="paint-benefit">
+          <strong>Waterproof Seal</strong>
+          <span>Stops leaks before they start</span>
+        </div>
+        <div class="paint-benefit">
+          <strong>Adds Kerb Appeal</strong>
+          <span>Transforms how your home looks</span>
+        </div>
+        <div class="paint-benefit">
+          <strong>Prevents Moss</strong>
+          <span>Anti-algae coating included</span>
+        </div>
+      </div>
+      <a href="tel:+353894046483" class="btn btn-primary">📞 Get a Roof Painting Quote</a>
+    </div>
+
+    <div class="painting-img">
+      <img src="/assets/images/roof-painting-feature.jpg" alt="Professional roof painting in Wexford by BrightView" loading="lazy">
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     WHY CHOOSE BRIGHTVIEW
+     ============================================= -->
+<section class="why" id="about">
+  <div class="container why-inner">
+
+    <div class="why-img-wrap">
+      <img src="/assets/images/team.jpg" alt="BrightView roof cleaning team Wexford" loading="lazy">
+      <div class="why-accent">
+        <strong>10+</strong>
+        <span>Years Serving<br>County Wexford</span>
+      </div>
+    </div>
+
+    <div class="why-content">
+      <span class="section-label">Why BrightView</span>
+      <h2>Wexford's Trusted Roof Cleaning Specialists</h2>
+      <p>We're a locally owned exterior cleaning company based in County Wexford. Every job is carried out by our own trained team — no subcontractors — and we stand behind our work with a satisfaction guarantee.</p>
+      <ul class="why-list">
+        <li>
+          <span class="why-check">✓</span>
+          <div><strong>Soft Wash Specialists</strong> — Low-pressure cleaning that protects your tiles from damage while eliminating moss and algae at the root.</div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div><strong>Fully Insured</strong> — Full public liability and employer's liability insurance on every job. Total peace of mind.</div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div><strong>Power Washing Experts</strong> — High-powered equipment to restore driveways, patios, paths, and exterior walls to like-new condition.</div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div><strong>Free, No-Obligation Quotes</strong> — Clear pricing with no hidden fees. We'll assess your roof and give you a straight, fair price.</div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div><strong>Local Wexford Team</strong> — We live and work here, so we're always nearby, available, and accountable to our community.</div>
+        </li>
+      </ul>
+      <a href="#quote" class="btn btn-blue">Get a Free Quote Today</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     BEFORE & AFTER
+     ============================================= -->
+<section class="before-after" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Work</span>
+      <h2>Before & After Results</h2>
+      <p>Real results from real Wexford homes. See the BrightView difference for yourself.</p>
+    </div>
+    <div class="ba-grid">
+
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-half before"><img src="/assets/images/ba1-before.jpg" alt="Mossy roof before cleaning Wexford"></div>
+          <div class="ba-divider"></div>
+          <div class="ba-half after"><img src="/assets/images/ba1-after.jpg" alt="Clean roof after BrightView treatment"></div>
+        </div>
+        <div class="ba-info">
+          <div class="ba-tags"><span class="ba-tag before">Before</span><span class="ba-tag after">After</span></div>
+          <h4>Heavy Moss Removal</h4>
+          <p>Soft wash roof clean — Enniscorthy</p>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-half before"><img src="/assets/images/ba2-before.jpg" alt="Faded roof before painting Wexford"></div>
+          <div class="ba-divider"></div>
+          <div class="ba-half after"><img src="/assets/images/ba2-after.jpg" alt="Roof after painting by BrightView"></div>
+        </div>
+        <div class="ba-info">
+          <div class="ba-tags"><span class="ba-tag before">Before</span><span class="ba-tag after">After</span></div>
+          <h4>Full Roof Painting</h4>
+          <p>Clean, prime &amp; coat — Wexford Town</p>
+        </div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-images">
+          <div class="ba-half before"><img src="/assets/images/ba3-before.jpg" alt="Dirty driveway before power washing Wexford"></div>
+          <div class="ba-divider"></div>
+          <div class="ba-half after"><img src="/assets/images/ba3-after.jpg" alt="Clean driveway after BrightView power washing"></div>
+        </div>
+        <div class="ba-info">
+          <div class="ba-tags"><span class="ba-tag before">Before</span><span class="ba-tag after">After</span></div>
+          <h4>Driveway Power Wash</h4>
+          <p>Full power washing — Gorey</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SERVICE AREAS
+     ============================================= -->
+<section class="areas" id="areas">
+  <div class="container areas-inner">
+
+    <div class="areas-content">
+      <span class="section-label">Coverage</span>
+      <h2>Roof Cleaning Across County Wexford</h2>
+      <p>
+        Based in County Wexford, BrightView provides professional roof cleaning, roof painting, and exterior cleaning services to homeowners across the entire county. Whether you're in Wexford Town, Gorey, Enniscorthy, or out towards Rosslare — we've got you covered.
+      </p>
+      <p>
+        We're familiar with the specific challenges Wexford homes face — coastal salt exposure, heavy rainfall, and the moss and algae growth that comes with it. Our treatments are tailored to the local climate.
+      </p>
+      <div class="area-tags">
+        <span class="area-tag">Wexford Town</span>
+        <span class="area-tag">Enniscorthy</span>
+        <span class="area-tag">Gorey</span>
+        <span class="area-tag">New Ross</span>
+        <span class="area-tag">Rosslare</span>
+        <span class="area-tag">Bunclody</span>
+        <span class="area-tag">Ferns</span>
+        <span class="area-tag">Kilmuckridge</span>
+        <span class="area-tag">Taghmon</span>
+        <span class="area-tag">Courtown</span>
+      </div>
+    </div>
+
+    <div class="area-map-placeholder">
+      <span>🗺️</span>
+      Embed Google Map here
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     TESTIMONIALS
+     ============================================= 
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Customer Reviews</span>
+      <h2>What Wexford Homeowners Say</h2>
+      <p>Don't take our word for it — hear from homeowners across Wexford who've used BrightView.</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Had BrightView out to clean and paint our roof in Enniscorthy and couldn't be happier. The team were professional, tidy, and the roof looks absolutely brand new. Would highly recommend them to anyone in Wexford.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SM</div>
+          <div>
+            <div class="reviewer-name">Seán Murphy</div>
+            <div class="reviewer-loc">Enniscorthy, Co. Wexford</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Brilliant service from start to finish. Got a quote the same day I called, and the lads were on-site within the week. Our gutters were completely blocked and the roof had heavy moss. Sorted in one visit — brilliant value too.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MK</div>
+          <div>
+            <div class="reviewer-name">Mary K.</div>
+            <div class="reviewer-loc">Gorey, Co. Wexford</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          The roof painting on our house in Wexford Town came out stunning. BrightView prepped it properly, used good quality paint, and were finished in a day and a half. The coating has held up brilliantly through the winter. Great local company.
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">PD</div>
+          <div>
+            <div class="reviewer-name">Patrick D.</div>
+            <div class="reviewer-loc">Wexford Town</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+-->
+<!-- =============================================
+     FINAL CTA
+     ============================================= -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready for a <span>Brighter Roof?</span></h2>
+    <p>Get your free, no-obligation quote today. We serve all of County Wexford and respond fast.</p>
+    <div class="cta-actions">
+      <a href="#quote" class="btn btn-primary" style="font-size:1.15rem; padding:16px 38px;">Get My Free Quote</a>
+    </div>
+    <div class="cta-call-block">
+      <div class="phone-ico">📞</div>
+      <div>
+        <span>Call us directly</span>
+        <a href="tel:+353894046483">089 404 6483</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">Bright<span>View</span></div>
+        <p>Professional roof cleaning and roof painting across County Wexford. Fully insured, locally owned, and proud to serve our community.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+353894046483">089 404 6483</a></li>
+          <li><a href="mailto:info@brightview.ie">info@brightview.ie</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+          <li><a href="#quote">Free Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 BrightView Roof Cleaning. All rights reserved.</span>
+      <span>Serving County Wexford · Fully Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+{% endblock %}

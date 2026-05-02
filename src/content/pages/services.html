@@ -1,0 +1,625 @@
+---
+title: 'Our Services | BrightView Roof Cleaning'
+description: 'BrightView offers professional roof cleaning, roof painting, moss removal, power washing and gutter cleaning. Fully insured. Free quotes.'
+preloadImg: '/assets/images/services-hero.jpg'
+permalink: '/services/'
+tags: 'sitemap'
+eleventyNavigation:
+  key: Services
+  order: 300
+---
+ 
+{% extends "layouts/base.html" %}
+ 
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+ 
+{% block body %}
+ 
+<style>
+  /* =============================================
+     SERVICES PAGE — BrightView
+     ============================================= */
+  :root {
+    --navy:    #0B1F3A;
+    --navy-mid:#122848;
+    --blue:    #1565C0;
+    --sky:     #2196F3;
+    --sky-lt:  #E3F2FD;
+    --amber:   #F59E0B;
+    --white:   #FFFFFF;
+    --off:     #F4F7FA;
+    --text:    #1A2740;
+    --muted:   #607080;
+    --border:  #D0DCE8;
+    --radius:  6px;
+    --shadow:  0 4px 24px rgba(11,31,58,0.12);
+  }
+ 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+  .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+ 
+  .btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: var(--radius);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  .btn-primary { background: var(--amber); color: var(--navy); }
+  .btn-primary:hover { background: #D97706; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
+  .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+  .btn-outline-white:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
+ 
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 10px;
+    display: block;
+  }
+ 
+  /* ============================================
+     PAGE HERO
+     ============================================ */
+  .page-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(135deg, rgba(11,31,58,0.90) 0%, rgba(18,40,72,0.75) 60%, rgba(21,101,192,0.5) 100%),
+      url('/assets/images/services-hero.jpg') center center / cover no-repeat;
+    padding: 120px 0 80px;
+    margin-top: 10px;
+  }
+  .page-hero-content { color: var(--white); max-width: 700px; }
+  .page-hero-content .section-label { color: #90CAF9; }
+  .page-hero-content h1 {
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+  .page-hero-content h1 em { font-style: normal; color: var(--sky); }
+  .page-hero-content p {
+    font-size: 1.08rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.75;
+    max-width: 580px;
+    margin-bottom: 28px;
+  }
+  .hero-jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .jump-link {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.2s;
+  }
+  .jump-link:hover { background: var(--sky); border-color: var(--sky); color: var(--white); }
+  .hero-breadcrumb {
+    position: absolute;
+    bottom: 20px;
+    left: 0; right: 0;
+  }
+  .hero-breadcrumb .container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero-breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+  .hero-breadcrumb a:hover { color: var(--sky); }
+  .hero-breadcrumb span { color: rgba(255,255,255,0.75); }
+ 
+  /* ============================================
+     SERVICE BLOCKS — ALTERNATING LAYOUT
+     ============================================ */
+  .service-block {
+    padding: 90px 0;
+  }
+  .service-block:nth-child(even) { background: var(--off); }
+  .service-block:nth-child(odd)  { background: var(--white); }
+  .service-block.dark {
+    background: var(--navy);
+  }
+ 
+  .block-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .block-inner.reverse { direction: rtl; }
+  .block-inner.reverse > * { direction: ltr; }
+ 
+  .block-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .block-img img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    background: var(--sky-lt);
+    display: block;
+  }
+  .block-img.dark-placeholder img { background: #1a3a5c; }
+ 
+  .block-content {}
+  .block-content .section-label { color: var(--sky); }
+  .block-content.on-dark .section-label { color: var(--amber); }
+ 
+  .service-tag {
+    display: inline-block;
+    background: var(--sky-lt);
+    color: var(--blue);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+  }
+  .service-tag.featured { background: var(--amber); color: var(--navy); }
+  .service-tag.on-dark { background: rgba(33,150,243,0.2); color: #90CAF9; }
+ 
+  .block-content h2 {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .block-content.on-dark h2 { color: var(--white); }
+ 
+  .block-content > p {
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .block-content.on-dark > p { color: rgba(255,255,255,0.68); }
+ 
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin: 22px 0 30px;
+  }
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  .block-content.on-dark .feature-list li { color: rgba(255,255,255,0.8); }
+  .feat-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--sky-lt);
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .block-content.on-dark .feat-check { background: rgba(33,150,243,0.25); color: #90CAF9; }
+  .feature-list li strong { color: var(--navy); }
+  .block-content.on-dark .feature-list li strong { color: var(--white); }
+ 
+  /* Feature grid — used for painting section */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 22px 0 30px;
+  }
+  .feat-tile {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .feat-tile.light {
+    background: var(--sky-lt);
+    border-color: rgba(33,150,243,0.2);
+  }
+  .feat-tile strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 3px;
+  }
+  .feat-tile.light strong { color: var(--blue); }
+  .feat-tile span { font-size: 0.84rem; color: rgba(255,255,255,0.6); }
+  .feat-tile.light span { color: var(--muted); }
+ 
+  /* ============================================
+     INLINE CTA BANNER
+     ============================================ */
+  .inline-cta {
+    background: var(--amber);
+    padding: 44px 0;
+  }
+  .inline-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .inline-cta h3 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: var(--navy);
+    text-transform: uppercase;
+  }
+  .inline-cta p {
+    color: rgba(11,31,58,0.7);
+    font-size: 0.95rem;
+    margin-top: 4px;
+  }
+  .inline-cta-actions { display: flex; gap: 14px; flex-shrink: 0; }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); }
+  .btn-outline-navy-solid { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+  .btn-outline-navy-solid:hover { background: var(--navy); color: var(--white); }
+ 
+  /* ============================================
+     FINAL CTA
+     ============================================ */
+  .services-cta {
+    padding: 90px 0;
+    background:
+      linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(21,101,192,0.85) 100%),
+      url('/assets/images/cta-bg.jpg') center / cover no-repeat;
+    text-align: center;
+    color: var(--white);
+  }
+  .services-cta h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .services-cta h2 span { color: var(--amber); }
+  .services-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 34px;
+    line-height: 1.7;
+  }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+  .cta-call-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 14px 28px;
+  }
+  .cta-call-block .phone-ico {
+    width: 36px; height: 36px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .cta-call-block a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .cta-call-block span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+ 
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 960px) {
+    .block-inner { grid-template-columns: 1fr; gap: 36px; }
+    .block-inner.reverse { direction: ltr; }
+    .feature-grid { grid-template-columns: 1fr 1fr; }
+    .inline-cta-inner { flex-direction: column; text-align: center; }
+    .inline-cta-actions { justify-content: center; }
+  }
+  @media (max-width: 560px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero-jump-links { display: none; }
+  }
+</style>
+ 
+<!-- =============================================
+     PAGE HERO
+     ============================================= -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label">What We Offer</span>
+      <h1>Roof Cleaning & <em>Exterior Services</em></h1>
+      <p>From soft-wash roof cleaning to full roof painting, power washing, and gutter care — BrightView covers everything your roof and exterior needs.</p>
+      <div class="hero-jump-links">
+        <a href="#roof-cleaning"  class="jump-link">Roof Cleaning</a>
+        <a href="#roof-painting"  class="jump-link">Roof Painting</a>
+        <a href="#moss-removal"   class="jump-link">Moss Removal</a>
+        <a href="#power-washing"  class="jump-link">Power Washing</a>
+        <a href="#gutter-cleaning" class="jump-link">Gutter Cleaning</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Services</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- =============================================
+     ROOF CLEANING
+     ============================================= -->
+<section class="service-block" id="roof-cleaning">
+  <div class="container block-inner">
+ 
+    <div class="block-img">
+      <img src="/assets/images/roof-cleaning.jpg" alt="Soft wash roof cleaning — BrightView" loading="lazy">
+    </div>
+ 
+    <div class="block-content">
+      <span class="section-label">Service 01</span>
+      <span class="service-tag">Most Requested</span>
+      <h2>Roof Cleaning</h2>
+      <p>
+        Moss, lichen, and algae don't just look bad — they trap moisture against your tiles, accelerating deterioration and leading to costly damage if left untreated. BrightView's professional roof cleaning service tackles the problem properly.
+      </p>
+      <p>
+        We use a <strong>low-pressure soft-wash system</strong> combined with a specialist biocide treatment. Unlike high-pressure jet washing — which can crack tiles, loosen mortar, and drive water into the roof structure — our method is safe for all tile types including concrete, slate, and clay.
+      </p>
+      <ul class="feature-list">
+        <li><span class="feat-check">✓</span><div><strong>Safe soft-wash</strong> — no risk of tile damage or loosened mortar</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Biocide treatment</strong> — kills moss and algae at the root, not just the surface</div></li>
+        <li><span class="feat-check">✓</span><div><strong>All tile types</strong> — concrete, slate, clay, and more</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Long-lasting results</strong> — treatments that keep working after we leave</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Garden protection</strong> — we cover and protect your plants and gutters throughout</div></li>
+      </ul>
+      <a href="tel:+353894046483" class="btn btn-primary">Get a Roof Cleaning Quote</a>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- =============================================
+     ROOF PAINTING
+     ============================================= -->
+<section class="service-block dark" id="roof-painting">
+  <div class="container block-inner reverse">
+ 
+    <div class="block-img dark-placeholder">
+      <img src="/assets/images/roof-painting.jpg" alt="Professional roof painting — BrightView" loading="lazy">
+    </div>
+ 
+    <div class="block-content on-dark">
+      <span class="section-label">Service 02</span>
+      <span class="service-tag featured">★ Most Popular</span>
+      <h2>Roof Painting</h2>
+      <p>
+        A professionally painted roof is one of the most impactful — and cost-effective — upgrades you can make to your home. It transforms your kerb appeal instantly and adds a waterproof, weatherproof layer that protects your tiles for years to come.
+      </p>
+      <p>
+        BrightView uses only <strong>premium UV-resistant roof coatings</strong> specifically formulated for Ireland's wet climate. Every roof painting job includes a full clean and inspection, application of a specialist primer, and two coats of high-quality roof paint with built-in anti-algae protection.
+      </p>
+      <div class="feature-grid">
+        <div class="feat-tile">
+          <strong>15+ Year Lifespan</strong>
+          <span>Quality coatings that go the distance</span>
+        </div>
+        <div class="feat-tile">
+          <strong>Waterproof Seal</strong>
+          <span>Locks out moisture and prevents leaks</span>
+        </div>
+        <div class="feat-tile">
+          <strong>Anti-Algae Formula</strong>
+          <span>Prevents moss and algae from returning</span>
+        </div>
+        <div class="feat-tile">
+          <strong>Full Prep Included</strong>
+          <span>Clean, repair, prime — then paint</span>
+        </div>
+      </div>
+      <a href="tel:+353894046483" class="btn btn-primary">Get a Roof Painting Quote</a>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- =============================================
+     INLINE CTA
+     ============================================= -->
+<div class="inline-cta">
+  <div class="container inline-cta-inner">
+    <div>
+      <h3>Not Sure What Your Roof Needs?</h3>
+      <p>We'll carry out a free assessment and recommend the right treatment — no hard selling, just honest advice.</p>
+    </div>
+    <div class="inline-cta-actions">
+      <a href="tel:+353894046483" class="btn btn-navy">📞 089 404 6483</a>
+      <a href="/#quote" class="btn btn-outline-navy-solid">Free Quote Online</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- =============================================
+     MOSS REMOVAL
+     ============================================= -->
+<section class="service-block" id="moss-removal">
+  <div class="container block-inner">
+ 
+    <div class="block-img">
+      <img src="/assets/images/moss-removal.jpg" alt="Moss and algae removal — BrightView" loading="lazy">
+    </div>
+ 
+    <div class="block-content">
+      <span class="section-label">Service 03</span>
+      <span class="service-tag">Specialist Treatment</span>
+      <h2>Moss & Algae Removal</h2>
+      <p>
+        Ireland's wet climate makes moss and algae growth almost inevitable on roof tiles — especially on north-facing or shaded slopes. Left unchecked, moss lifts tiles, blocks gutters, and retains moisture that slowly degrades the roof structure beneath.
+      </p>
+      <p>
+        Our dedicated moss removal service goes beyond a basic clean. We apply a professional-grade biocide that penetrates deep into the moss and lichen colonies, killing them at the root. Over the weeks that follow, the dead growth washes away naturally in the rain — leaving a clean, treated surface.
+      </p>
+      <ul class="feature-list">
+        <li><span class="feat-check">✓</span><div><strong>Deep-penetrating biocide</strong> — kills moss, algae, and lichen at the source</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Safe for all tile types</strong> — no abrasive scrubbing or high-pressure damage</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Continued action after treatment</strong> — keeps working long after we've left</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Can be paired with roof painting</strong> — for a clean, protected, great-looking finish</div></li>
+      </ul>
+      <a href="tel:+353894046483" class="btn btn-primary">Get a Moss Removal Quote</a>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- =============================================
+     POWER WASHING
+     ============================================= -->
+<section class="service-block" id="power-washing">
+  <div class="container block-inner reverse">
+ 
+    <div class="block-img">
+      <img src="/assets/images/power-washing.jpg" alt="Power washing driveways and patios — BrightView" loading="lazy">
+    </div>
+ 
+    <div class="block-content">
+      <span class="section-label">Service 04</span>
+      <span class="service-tag">Exterior Cleaning</span>
+      <h2>Power Washing</h2>
+      <p>
+        Driveways, patios, paths, and exterior walls take a battering from the Irish weather — and years of dirt, algae, and staining can make even a well-kept home look neglected. BrightView's power washing service restores surfaces to their original condition, fast.
+      </p>
+      <p>
+        We use professional-grade pressure washing equipment and surface-appropriate cleaning agents to safely lift built-up grime without damaging block paving, tarmac, natural stone, or concrete. The results speak for themselves.
+      </p>
+      <ul class="feature-list">
+        <li><span class="feat-check">✓</span><div><strong>Driveways & pathways</strong> — block paving, tarmac, concrete, natural stone</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Patios & decking areas</strong> — safe, effective cleaning on all surfaces</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Exterior walls & fascia</strong> — removes green algae and environmental staining</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Oil & stain removal</strong> — specialist treatments for stubborn marks</div></li>
+      </ul>
+      <a href="tel:+353894046483" class="btn btn-primary">Get a Power Washing Quote</a>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- =============================================
+     GUTTER CLEANING
+     ============================================= -->
+<section class="service-block" id="gutter-cleaning">
+  <div class="container block-inner">
+ 
+    <div class="block-img">
+      <img src="/assets/images/gutter-cleaning.jpg" alt="Gutter cleaning — BrightView" loading="lazy">
+    </div>
+ 
+    <div class="block-content">
+      <span class="section-label">Service 05</span>
+      <span class="service-tag">Preventative Care</span>
+      <h2>Gutter Cleaning</h2>
+      <p>
+        Blocked gutters are one of the most common — and most avoidable — causes of damp, fascia damage, and water ingress in Irish homes. When gutters overflow, water runs down the exterior walls and can seep into the structure of the building, leading to expensive repairs down the line.
+      </p>
+      <p>
+        BrightView's gutter cleaning service fully clears, flushes, and inspects your guttering from end to end. We check for cracks, sagging, and poor joints while we're up there, so you know exactly what condition your gutters are in.
+      </p>
+      <ul class="feature-list">
+        <li><span class="feat-check">✓</span><div><strong>Full debris clearance</strong> — leaves, moss, and blockages removed throughout</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Downpipe flushing</strong> — ensures water flows freely all the way through</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Condition check included</strong> — we flag any cracks, sagging, or joint issues</div></li>
+        <li><span class="feat-check">✓</span><div><strong>Often combined with roof cleaning</strong> — save on a visit and get both done together</div></li>
+      </ul>
+      <a href="tel:+353894046483" class="btn btn-primary">Get a Gutter Cleaning Quote</a>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- =============================================
+     FINAL CTA
+     ============================================= -->
+<section class="services-cta">
+  <div class="container">
+    <h2>Ready for a <span>Brighter Home?</span></h2>
+    <p>Get your free, no-obligation quote today. Fully insured, locally based, and ready to help.</p>
+    <div class="cta-actions">
+      <a href="/#quote" class="btn btn-primary" style="font-size:1.15rem; padding:16px 38px;">Get My Free Quote</a>
+    </div>
+    <div class="cta-call-block">
+      <div class="phone-ico">📞</div>
+      <div>
+        <span>Call us directly</span>
+        <a href="tel:+353894046483">089 404 6483</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+{% endblock %}

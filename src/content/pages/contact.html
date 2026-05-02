@@ -1,0 +1,640 @@
+---
+title: 'Contact BrightView | Free Quote — Roof Cleaning Wexford'
+description: 'Get in touch with BrightView for a free, no-obligation quote on roof cleaning, roof painting or power washing. Serving Wexford and surrounding counties. Call 089 404 6483.'
+preloadImg: '/assets/images/contact-hero.jpg'
+permalink: '/contact/'
+tags: 'sitemap'
+eleventyNavigation:
+  key: Contact
+  order: 500
+---
+ 
+{% extends "layouts/base.html" %}
+ 
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+ 
+{% block body %}
+ 
+<style>
+  /* =============================================
+     CONTACT PAGE — BrightView
+     ============================================= */
+  :root {
+    --navy:    #0B1F3A;
+    --navy-mid:#122848;
+    --blue:    #1565C0;
+    --sky:     #2196F3;
+    --sky-lt:  #E3F2FD;
+    --amber:   #F59E0B;
+    --white:   #FFFFFF;
+    --off:     #F4F7FA;
+    --text:    #1A2740;
+    --muted:   #607080;
+    --border:  #D0DCE8;
+    --radius:  6px;
+    --shadow:  0 4px 24px rgba(11,31,58,0.12);
+  }
+ 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+  .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+ 
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 10px;
+    display: block;
+  }
+ 
+  /* ============================================
+     PAGE HERO
+     ============================================ */
+  .page-hero {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(18,40,72,0.78) 60%, rgba(21,101,192,0.5) 100%),
+      url('/assets/images/contact-hero.jpg') center center / cover no-repeat;
+    padding: 120px 0 72px;
+  }
+  .page-hero-content { color: var(--white); max-width: 640px; }
+  .page-hero-content .section-label { color: #90CAF9; }
+  .page-hero-content h1 {
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .page-hero-content h1 em { font-style: normal; color: var(--sky); }
+  .page-hero-content p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.72;
+    max-width: 500px;
+  }
+  .hero-breadcrumb {
+    position: absolute;
+    bottom: 20px; left: 0; right: 0;
+  }
+  .hero-breadcrumb .container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero-breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+  .hero-breadcrumb a:hover { color: var(--sky); }
+  .hero-breadcrumb span { color: rgba(255,255,255,0.75); }
+ 
+  /* ============================================
+     MAIN CONTACT BLOCK
+     ============================================ */
+  .contact-main {
+    padding: 80px 0 90px;
+    background: var(--off);
+  }
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+  }
+ 
+  /* --- LEFT: Details --- */
+  .contact-details {}
+  .contact-details h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .contact-details > p {
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+ 
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .contact-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+    text-decoration: none;
+  }
+  .contact-card:hover { transform: translateX(4px); }
+  .contact-card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: var(--sky-lt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-card.primary .contact-card-icon { background: var(--navy); }
+  .contact-card-text {}
+  .contact-card-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .contact-card-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .contact-card.primary .contact-card-value { color: var(--blue); }
+ 
+  /* Hours block */
+  .hours-block {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 26px 28px;
+    margin-bottom: 24px;
+  }
+  .hours-block h3 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+  .hours-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.92rem;
+  }
+  .hours-day { color: rgba(255,255,255,0.65); }
+  .hours-time {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+  }
+  .hours-time.closed { color: var(--muted); }
+  .hours-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 10px 0;
+  }
+ 
+  /* Trust pills */
+  .trust-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .trust-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 30px;
+    padding: 7px 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    box-shadow: 0 2px 8px rgba(11,31,58,0.06);
+  }
+  .trust-pill::before { content: "✓"; color: var(--sky); }
+ 
+  /* --- RIGHT: Form --- */
+  .contact-form-wrap {
+    position: sticky;
+    top: 88px;
+  }
+  .contact-form-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 40px rgba(11,31,58,0.14);
+  }
+  .form-header { margin-bottom: 28px; }
+  .form-header h3 {
+    font-size: 1.7rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .form-header p { font-size: 0.9rem; color: var(--muted); }
+ 
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 5px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--sky);
+    box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 6px;
+  }
+  .form-submit:hover { background: var(--blue); transform: translateY(-2px); }
+  .form-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  .form-note strong { color: var(--navy); }
+ 
+  /* ============================================
+     MAP
+     ============================================ */
+  .map-section {
+    background: var(--white);
+  }
+  .map-section h2 {
+    /* visually hidden — for SEO */
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+  }
+  .map-embed {
+    width: 100%;
+    height: 420px;
+    background: var(--off);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 12px;
+    color: var(--muted);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .map-embed span { font-size: 2.5rem; }
+  .map-embed small {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--border);
+    max-width: 340px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  /* When a real iframe is dropped in, remove the flex styling */
+  .map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+ 
+  /* ============================================
+     FIND US STRIP
+     ============================================ */
+  .find-us {
+    padding: 64px 0;
+    background: var(--navy);
+  }
+  .find-us-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .find-us-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 28px;
+  }
+  .find-us-card h3 {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .find-us-card p, .find-us-card address {
+    font-style: normal;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.8;
+  }
+  .find-us-card a {
+    color: rgba(255,255,255,0.85);
+    transition: color 0.2s;
+  }
+  .find-us-card a:hover { color: var(--sky); }
+  .find-us-card strong { color: var(--white); }
+ 
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 960px) {
+    .contact-inner { grid-template-columns: 1fr; }
+    .contact-form-wrap { position: static; }
+    .find-us-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+  @media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form-card { padding: 28px 22px; }
+  }
+</style>
+ 
+<!-- =============================================
+     PAGE HERO
+     ============================================= -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label">Get In Touch</span>
+      <h1>Request a <em>Free Quote</em></h1>
+      <p>Call us, send a message, or fill in the form and we'll get back to you fast. No obligation, no hard sell — just honest advice and a fair price.</p>
+    </div>
+  </div>
+  <div class="hero-breadcrumb">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Contact</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- =============================================
+     MAIN CONTACT BLOCK
+     ============================================= -->
+<section class="contact-main">
+  <div class="container contact-inner">
+ 
+    <!-- LEFT: Contact details -->
+    <div class="contact-details">
+      <span class="section-label">Contact Details</span>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Whether you're ready to book or just want to ask a few questions, get in touch and we'll be happy to help. We cover Wexford and the surrounding counties of Wicklow, Carlow, and Waterford.</p>
+ 
+      <div class="contact-cards">
+ 
+        <a href="tel:+353894046483" class="contact-card primary">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Call Us</div>
+            <div class="contact-card-value">089 404 6483</div>
+          </div>
+        </a>
+ 
+        <a href="mailto:info@brightview.ie" class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Email Us</div>
+            <div class="contact-card-value">info@brightview.ie</div>
+          </div>
+        </a>
+ 
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Based In</div>
+            <div class="contact-card-value">County Wexford, Ireland</div>
+          </div>
+        </div>
+ 
+      </div>
+ 
+      <div class="hours-block">
+        <h3>Working Hours</h3>
+        <ul class="hours-list">
+          <li>
+            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-time">8:00am – 6:00pm</span>
+          </li>
+          <li>
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">9:00am – 4:00pm</span>
+          </li>
+          <hr class="hours-divider">
+          <li>
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time closed">Closed</span>
+          </li>
+        </ul>
+      </div>
+ 
+      <div class="trust-pills">
+        <span class="trust-pill">Fully Insured</span>
+        <span class="trust-pill">Free Quotes</span>
+        <span class="trust-pill">Fast Response</span>
+        <span class="trust-pill">No Obligation</span>
+      </div>
+ 
+    </div>
+ 
+    <!-- RIGHT: Quote form -->
+    <div class="contact-form-wrap">
+      <div class="contact-form-card">
+        <div class="form-header">
+          <h3>Get Your Free Quote</h3>
+          <p>We'll get back to you within a few hours</p>
+        </div>
+        <form action="/thank-you/" method="POST" name="brightview-contact" netlify>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="First name" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your number" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="address">Address / Eircode</label>
+            <input type="text" id="address" name="address" placeholder="Your address or Eircode">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service">
+              <option value="">Select a service…</option>
+              <option value="roof-cleaning">Roof Cleaning</option>
+              <option value="roof-painting">Roof Painting & Coating</option>
+              <option value="moss-removal">Moss & Algae Removal</option>
+              <option value="power-washing">Power Washing</option>
+              <option value="gutter-cleaning">Gutter Cleaning</option>
+              <option value="not-sure">Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us a bit about your job — any extra details help us give you an accurate quote…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Enquiry →</button>
+          <p class="form-note">We typically reply within <strong>a few hours</strong>. Your details are never shared.</p>
+        </form>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<!-- =============================================
+     MAP
+     ============================================= -->
+<section class="map-section">
+  <h2>BrightView Service Area — County Wexford and surrounding counties</h2>
+  <div class="map-embed">
+    <!--
+      REPLACE THIS COMMENT with your Google Maps embed iframe.
+      Example:
+      <iframe
+        src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+        width="100%" height="420" style="border:0;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    -->
+    <span>🗺️</span>
+    Embed Google Map Here
+    <small>Paste your Google Maps embed iframe inside the .map-embed div to replace this placeholder</small>
+  </div>
+</section>
+ 
+<!-- =============================================
+     FIND US
+     ============================================= -->
+<section class="find-us">
+  <div class="container find-us-grid">
+ 
+    <div class="find-us-card">
+      <h3>📍 Where We're Based</h3>
+      <address>
+        BrightView Roof Cleaning<br>
+        <strong>County Wexford</strong><br>
+        Ireland
+      </address>
+      <p style="margin-top:12px;">We're a mobile team covering all of County Wexford and the surrounding counties. We come to you — no need to travel to us.</p>
+    </div>
+ 
+    <div class="find-us-card">
+      <h3>🚗 Areas We Cover</h3>
+      <p>
+        <strong>Wexford:</strong> Wexford Town, Enniscorthy, Gorey, New Ross, Rosslare, Bunclody, Courtown, Ferns, Kilmuckridge, Taghmon<br><br>
+        <strong>Also covering:</strong> Co. Wicklow, Co. Carlow & Co. Waterford
+      </p>
+    </div>
+ 
+    <div class="find-us-card">
+      <h3>📞 Contact</h3>
+      <p>
+        <strong>Phone:</strong><br>
+        <a href="tel:+353894046483">089 404 6483</a><br><br>
+        <strong>Email:</strong><br>
+        <a href="mailto:info@brightview.ie">info@brightview.ie</a><br><br>
+        <strong>Mon–Fri:</strong> 8am – 6pm<br>
+        <strong>Saturday:</strong> 9am – 4pm
+      </p>
+    </div>
+ 
+  </div>
+</section>
+ 
+{% endblock %}
