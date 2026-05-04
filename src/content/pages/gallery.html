@@ -8,15 +8,15 @@ eleventyNavigation:
   key: Gallery
   order: 400
 ---
-
+ 
 {% extends "layouts/base.html" %}
-
+ 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/local.css">
 {% endblock %}
-
+ 
 {% block body %}
-
+ 
 <style>
   /* =============================================
      GALLERY PAGE — BrightView
@@ -36,7 +36,7 @@ eleventyNavigation:
     --radius:  6px;
     --shadow:  0 4px 24px rgba(11,31,58,0.12);
   }
-
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
@@ -49,7 +49,7 @@ eleventyNavigation:
     letter-spacing: 0.02em;
   }
   .container { width: 90%; max-width: 1160px; margin: 0 auto; }
-
+ 
   .btn {
     display: inline-block;
     padding: 13px 28px;
@@ -65,7 +65,7 @@ eleventyNavigation:
   }
   .btn-primary { background: var(--amber); color: var(--navy); }
   .btn-primary:hover { background: #D97706; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
-
+ 
   .section-label {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
@@ -76,7 +76,7 @@ eleventyNavigation:
     margin-bottom: 10px;
     display: block;
   }
-
+ 
   /* ============================================
      PAGE HERO
      ============================================ */
@@ -89,7 +89,6 @@ eleventyNavigation:
       linear-gradient(135deg, rgba(11,31,58,0.90) 0%, rgba(18,40,72,0.75) 60%, rgba(21,101,192,0.5) 100%),
       url('/assets/images/img1.jpeg') center center / cover no-repeat;
     padding: 120px 0 72px;
-    margin-top: 10px;
   }
   .page-hero-content { color: var(--white); max-width: 640px; }
   .page-hero-content .section-label { color: #90CAF9; }
@@ -125,7 +124,7 @@ eleventyNavigation:
   .hero-breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
   .hero-breadcrumb a:hover { color: var(--sky); }
   .hero-breadcrumb span { color: rgba(255,255,255,0.75); }
-
+ 
   /* ============================================
      FILTER BAR
      ============================================ */
@@ -178,7 +177,7 @@ eleventyNavigation:
     border-color: var(--navy);
     color: var(--white);
   }
-
+ 
   /* ============================================
      GALLERY GRID
      ============================================ */
@@ -204,7 +203,7 @@ eleventyNavigation:
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(11,31,58,0.18);
   }
-
+ 
   /* Image wrap */
   .gallery-card-img {
     position: relative;
@@ -218,7 +217,7 @@ eleventyNavigation:
   .gallery-card:hover .gallery-card-img img {
     transform: scale(1.04);
   }
-
+ 
   /* Zoom icon */
   .gallery-zoom {
     position: absolute;
@@ -238,7 +237,7 @@ eleventyNavigation:
   }
   .gallery-card:hover .gallery-zoom { opacity: 1; transform: scale(1); }
   .gallery-zoom svg { width: 15px; height: 15px; stroke: var(--navy); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-
+ 
   /* Badge */
   .gallery-badge {
     position: absolute;
@@ -258,7 +257,7 @@ eleventyNavigation:
   .badge-after   { background: rgba(21,128,61,0.85);  color: #fff; }
   .badge-work    { background: rgba(11,31,58,0.8);    color: #fff; }
   .badge-paint   { background: rgba(245,158,11,0.9);  color: var(--navy); }
-
+ 
   /* Card info */
   .gallery-card-info {
     padding: 16px 18px 18px;
@@ -295,7 +294,7 @@ eleventyNavigation:
   }
   .meta-tag.paint { background: #FEF3C7; color: #92400E; }
   .meta-tag.power { background: #F0FDF4; color: #166534; }
-
+ 
   /* ============================================
      LIGHTBOX
      ============================================ */
@@ -381,7 +380,7 @@ eleventyNavigation:
   .lightbox-prev { left: -56px; }
   .lightbox-next { right: -56px; }
   .lightbox-nav svg { width: 18px; height: 18px; stroke: var(--white); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-
+ 
   /* ============================================
      CTA
      ============================================ */
@@ -436,7 +435,7 @@ eleventyNavigation:
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-
+ 
   /* ============================================
      RESPONSIVE
      ============================================ */
@@ -451,7 +450,7 @@ eleventyNavigation:
     .filter-count { display: none; }
   }
 </style>
-
+ 
 <!-- =============================================
      PAGE HERO
      ============================================= -->
@@ -460,7 +459,7 @@ eleventyNavigation:
     <div class="page-hero-content">
       <span class="section-label">Our Work</span>
       <h1>The <em>BrightView</em> Results</h1>
-      <p>Real jobs, real results. Browse before and after photos, roof painting transformations, and completed work from our team.</p>
+      <p>Real jobs, real results. Browse before and after photos, roof cleaning treatments, and power washing work from our team.</p>
     </div>
   </div>
   <div class="hero-breadcrumb">
@@ -471,7 +470,7 @@ eleventyNavigation:
     </div>
   </div>
 </section>
-
+ 
 <!-- =============================================
      FILTER BAR
      ============================================= -->
@@ -479,111 +478,131 @@ eleventyNavigation:
   <div class="container filter-inner">
     <button class="filter-tab active" data-filter="all">All Work</button>
     <button class="filter-tab" data-filter="roof-cleaning">Roof Cleaning</button>
-    <button class="filter-tab" data-filter="roof-painting">Roof Painting</button>
-    <button class="filter-tab" data-filter="before-after">Before & After</button>
     <button class="filter-tab" data-filter="power-washing">Power Washing</button>
+    <button class="filter-tab" data-filter="before-after">Before & After</button>
     <span class="filter-count"><span id="gallery-count">12</span> photos</span>
   </div>
 </div>
-
+ 
 <!-- =============================================
      GALLERY GRID
      ============================================= -->
 <section class="gallery-section">
   <div class="container">
     <div class="gallery-grid" id="gallery-grid">
-
-      <!-- Before BrightView -->
+ 
+      <!-- beforeBV — roof clean before -->
       <div class="gallery-card"
            data-category="before-after roof-cleaning"
-           data-caption="Before — Heavy moss build-up on roof tiles"
+           data-caption="Before — Roof cleaning, moss and algae build-up"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/beforeBV.jpeg" alt="Roof before cleaning — heavy moss growth" loading="lazy">
+          <img src="/assets/images/beforeBV.jpeg" alt="Roof before cleaning — moss and algae growth" loading="lazy">
           <span class="gallery-badge badge-before">Before</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>Before Treatment</h3>
-          <p>Heavy moss and algae growth covering the full roof surface</p>
+          <h3>Roof Clean — Before</h3>
+          <p>Heavy moss and algae covering the tile surface prior to treatment</p>
           <div class="card-meta">
             <span class="meta-tag">Roof Cleaning</span>
           </div>
         </div>
       </div>
-
-      <!-- After BrightView -->
+ 
+      <!-- afterbv — roof clean after -->
       <div class="gallery-card"
            data-category="before-after roof-cleaning"
-           data-caption="After — Soft wash roof clean complete"
+           data-caption="After — Roof clean complete, tiles cleared and treated"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/afterbv.jpeg" alt="Roof after BrightView soft wash clean" loading="lazy">
+          <img src="/assets/images/afterbv.jpeg" alt="Roof after soft wash clean — moss removed" loading="lazy">
           <span class="gallery-badge badge-after">After</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>After Treatment</h3>
-          <p>Clean, treated roof — moss removed, biocide applied for lasting results</p>
+          <h3>Roof Clean — After</h3>
+          <p>Moss removed and biocide applied — tiles clean and treated</p>
           <div class="card-meta">
             <span class="meta-tag">Roof Cleaning</span>
           </div>
         </div>
       </div>
-
-      <!-- b4BV — Before roof paint -->
+ 
+      <!-- b4BV — power washing before -->
       <div class="gallery-card"
-           data-category="before-after roof-painting"
-           data-caption="Before — Faded, weathered tiles prior to painting"
+           data-category="before-after power-washing"
+           data-caption="Before — Surface staining and algae prior to power washing"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/b4BV.jpeg" alt="Roof before painting — faded and weathered tiles" loading="lazy">
+          <img src="/assets/images/b4BV.jpeg" alt="Surface before power washing — staining and algae" loading="lazy">
           <span class="gallery-badge badge-before">Before</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>Before Roof Painting</h3>
-          <p>Faded, weathered tiles in need of a full clean, prime and coat</p>
+          <h3>Power Wash — Before</h3>
+          <p>Built-up dirt, algae and staining before pressure washing treatment</p>
           <div class="card-meta">
-            <span class="meta-tag paint">Roof Painting</span>
+            <span class="meta-tag power">Power Washing</span>
           </div>
         </div>
       </div>
-
-      <!-- A4TRbv — After roof paint -->
+ 
+      <!-- A4TRbv — power washing after -->
       <div class="gallery-card"
-           data-category="before-after roof-painting"
-           data-caption="After — Roof painting complete, fresh coat applied"
+           data-category="before-after power-washing"
+           data-caption="After — Power washing complete, surface fully restored"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/A4TRbv.jpeg" alt="Roof after BrightView painting — fresh professional coat" loading="lazy">
-          <span class="gallery-badge badge-paint">After Paint</span>
+          <img src="/assets/images/A4TRbv.jpeg" alt="Surface after power washing — restored and clean" loading="lazy">
+          <span class="gallery-badge badge-after">After</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>After Roof Painting</h3>
-          <p>Premium weatherproof coating applied — transformed finish that lasts</p>
+          <h3>Power Wash — After</h3>
+          <p>Surface fully restored — dirt, algae and staining completely removed</p>
           <div class="card-meta">
-            <span class="meta-tag paint">Roof Painting</span>
+            <span class="meta-tag power">Power Washing</span>
           </div>
         </div>
       </div>
-
-      <!-- img1 -->
+ 
+      <!-- img1 — power washing -->
       <div class="gallery-card"
-           data-category="roof-cleaning"
-           data-caption="Soft wash roof cleaning in progress"
+           data-category="power-washing"
+           data-caption="Power washing — completed"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/img1.jpeg" alt="Soft wash roof cleaning" loading="lazy">
+          <img src="/assets/images/img1.jpeg" alt="Power washing completed by BrightView" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Power Washing</h3>
+          <p>Professional power washing — surface cleared and restored</p>
+          <div class="card-meta">
+            <span class="meta-tag power">Power Washing</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- img2 — roof cleaning -->
+      <div class="gallery-card"
+           data-category="roof-cleaning"
+           data-caption="Roof cleaning — completed"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img2.jpeg" alt="Roof cleaning completed by BrightView" loading="lazy">
           <span class="gallery-badge badge-work">Completed</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -591,165 +610,143 @@ eleventyNavigation:
         </div>
         <div class="gallery-card-info">
           <h3>Roof Clean</h3>
-          <p>Full soft wash treatment with biocide application</p>
+          <p>Soft wash treatment with biocide — tiles cleared of all growth</p>
           <div class="card-meta">
             <span class="meta-tag">Roof Cleaning</span>
           </div>
         </div>
       </div>
-
-      <!-- img2 -->
-      <div class="gallery-card"
-           data-category="roof-painting"
-           data-caption="Roof painting — two coat application"
-           onclick="openLightbox(this)">
-        <div class="gallery-card-img">
-          <img src="/assets/images/img2.jpeg" alt="Roof painting — two coat application" loading="lazy">
-          <span class="gallery-badge badge-paint">Roof Paint</span>
-          <div class="gallery-zoom">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </div>
-        <div class="gallery-card-info">
-          <h3>Roof Painting</h3>
-          <p>Full prep, prime, and two-coat finish on concrete tiles</p>
-          <div class="card-meta">
-            <span class="meta-tag paint">Roof Painting</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- img3 -->
-      <div class="gallery-card"
-           data-category="roof-cleaning"
-           data-caption="Moss removal — tiles cleared and treated"
-           onclick="openLightbox(this)">
-        <div class="gallery-card-img">
-          <img src="/assets/images/img3.jpeg" alt="Moss removal and roof cleaning completed" loading="lazy">
-          <span class="gallery-badge badge-work">Completed</span>
-          <div class="gallery-zoom">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </div>
-        <div class="gallery-card-info">
-          <h3>Moss Removal</h3>
-          <p>Tiles cleared of moss and lichen, biocide treatment applied</p>
-          <div class="card-meta">
-            <span class="meta-tag">Roof Cleaning</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- img4 -->
+ 
+      <!-- img3 — power washing -->
       <div class="gallery-card"
            data-category="power-washing"
-           data-caption="Driveway power wash — before and after"
+           data-caption="Power washing — completed"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/img4.jpeg" alt="Driveway power washing completed" loading="lazy">
+          <img src="/assets/images/img3.jpeg" alt="Power washing completed by BrightView" loading="lazy">
           <span class="gallery-badge badge-work">Completed</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>Driveway Power Wash</h3>
-          <p>Block paving restored and algae fully removed</p>
+          <h3>Power Washing</h3>
+          <p>Algae and surface staining removed — clean finish throughout</p>
           <div class="card-meta">
             <span class="meta-tag power">Power Washing</span>
           </div>
         </div>
       </div>
-
-      <!-- img5 -->
-      <div class="gallery-card"
-           data-category="roof-painting"
-           data-caption="Roof coating — finished result"
-           onclick="openLightbox(this)">
-        <div class="gallery-card-img">
-          <img src="/assets/images/img5.jpeg" alt="Completed roof painting and coating" loading="lazy">
-          <span class="gallery-badge badge-paint">Roof Paint</span>
-          <div class="gallery-zoom">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </div>
-        <div class="gallery-card-info">
-          <h3>Roof Coating</h3>
-          <p>Weatherproof coating applied — anti-algae formula included</p>
-          <div class="card-meta">
-            <span class="meta-tag paint">Roof Painting</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- img6 -->
-      <div class="gallery-card"
-           data-category="roof-cleaning"
-           data-caption="Full roof clean — completed"
-           onclick="openLightbox(this)">
-        <div class="gallery-card-img">
-          <img src="/assets/images/img6.jpeg" alt="Full roof clean completed by BrightView" loading="lazy">
-          <span class="gallery-badge badge-work">Completed</span>
-          <div class="gallery-zoom">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-        </div>
-        <div class="gallery-card-info">
-          <h3>Full Roof Clean</h3>
-          <p>Soft wash treatment on a detached home — tiles and ridge caps</p>
-          <div class="card-meta">
-            <span class="meta-tag">Roof Cleaning</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- img7 -->
+ 
+      <!-- img4 — power washing -->
       <div class="gallery-card"
            data-category="power-washing"
-           data-caption="Patio power wash — algae and staining removed"
+           data-caption="Power washing — completed"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/img7.jpeg" alt="Patio power washing completed" loading="lazy">
+          <img src="/assets/images/img4.jpeg" alt="Power washing completed by BrightView" loading="lazy">
           <span class="gallery-badge badge-work">Completed</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>Patio Power Wash</h3>
-          <p>Natural stone patio cleaned and algae staining fully removed</p>
+          <h3>Power Washing</h3>
+          <p>Full surface clean — dirt and green algae fully cleared</p>
           <div class="card-meta">
             <span class="meta-tag power">Power Washing</span>
           </div>
         </div>
       </div>
-
-      <!-- img8 -->
+ 
+      <!-- img5 — power washing -->
       <div class="gallery-card"
-           data-category="roof-cleaning roof-painting"
-           data-caption="Clean and paint — full exterior roof treatment"
+           data-category="power-washing"
+           data-caption="Power washing — completed"
            onclick="openLightbox(this)">
         <div class="gallery-card-img">
-          <img src="/assets/images/img8.jpeg" alt="Roof clean and paint combined service" loading="lazy">
+          <img src="/assets/images/img5.jpeg" alt="Power washing completed by BrightView" loading="lazy">
           <span class="gallery-badge badge-work">Completed</span>
           <div class="gallery-zoom">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
         </div>
         <div class="gallery-card-info">
-          <h3>Clean & Paint</h3>
-          <p>Full roof treatment — moss removal followed by a two-coat paint finish</p>
+          <h3>Power Washing</h3>
+          <p>Surface restored to original condition — results you can see</p>
           <div class="card-meta">
-            <span class="meta-tag">Roof Cleaning</span>
-            <span class="meta-tag paint">Roof Painting</span>
+            <span class="meta-tag power">Power Washing</span>
           </div>
         </div>
       </div>
-
+ 
+      <!-- img6 — roof cleaning -->
+      <div class="gallery-card"
+           data-category="roof-cleaning"
+           data-caption="Roof cleaning — completed"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img6.jpeg" alt="Roof cleaning completed by BrightView" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Roof Clean</h3>
+          <p>Full roof treated — moss, lichen and algae cleared from all tiles</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- img7 — power washing -->
+      <div class="gallery-card"
+           data-category="power-washing"
+           data-caption="Power washing — completed"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img7.jpeg" alt="Power washing completed by BrightView" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Power Washing</h3>
+          <p>Professional power wash — staining and growth removed</p>
+          <div class="card-meta">
+            <span class="meta-tag power">Power Washing</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- img8 — roof cleaning -->
+      <div class="gallery-card"
+           data-category="roof-cleaning"
+           data-caption="Roof cleaning — completed"
+           onclick="openLightbox(this)">
+        <div class="gallery-card-img">
+          <img src="/assets/images/img8.jpeg" alt="Roof cleaning completed by BrightView" loading="lazy">
+          <span class="gallery-badge badge-work">Completed</span>
+          <div class="gallery-zoom">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h3>Roof Clean</h3>
+          <p>Soft wash clean — tiles treated and moss growth eliminated</p>
+          <div class="card-meta">
+            <span class="meta-tag">Roof Cleaning</span>
+          </div>
+        </div>
+      </div>
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- =============================================
      LIGHTBOX
      ============================================= -->
@@ -768,13 +765,13 @@ eleventyNavigation:
     </button>
   </div>
 </div>
-
+ 
 <!-- =============================================
      CTA
      ============================================= -->
 <section class="gallery-cta">
   <div class="container">
-    <h2>Like What <span>You See?</span></h2>
+    <h2 style="color: white;">Like What <span>You See?</span></h2>
     <p>Get in touch for a free, no-obligation quote and let us do the same for your home.</p>
     <a href="/#quote" class="btn btn-primary" style="font-size:1.1rem; padding:15px 36px;">Get a Free Quote</a>
     <br>
@@ -787,7 +784,7 @@ eleventyNavigation:
     </div>
   </div>
 </section>
-
+ 
 <!-- =============================================
      SCRIPTS
      ============================================= -->
@@ -796,7 +793,7 @@ eleventyNavigation:
   const tabs  = document.querySelectorAll('.filter-tab');
   const cards = document.querySelectorAll('.gallery-card');
   const countEl = document.getElementById('gallery-count');
-
+ 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
@@ -812,17 +809,17 @@ eleventyNavigation:
       countEl.textContent = visible;
     });
   });
-
+ 
   // === LIGHTBOX ===
   const lightbox  = document.getElementById('lightbox');
   const lbImg     = document.getElementById('lightbox-img');
   const lbCaption = document.getElementById('lightbox-caption');
   let currentIdx  = 0;
-
+ 
   function getVisible() {
     return [...cards].filter(c => c.style.display !== 'none');
   }
-
+ 
   function openLightbox(card) {
     const visible = getVisible();
     currentIdx = visible.indexOf(card);
@@ -833,13 +830,13 @@ eleventyNavigation:
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
+ 
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
     lbImg.src = '';
   }
-
+ 
   function navigate(dir) {
     const visible = getVisible();
     currentIdx = (currentIdx + dir + visible.length) % visible.length;
@@ -849,15 +846,15 @@ eleventyNavigation:
     lbImg.alt = img.alt;
     lbCaption.textContent = card.dataset.caption || '';
   }
-
+ 
   document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
   document.getElementById('lightbox-prev').addEventListener('click', () => navigate(-1));
   document.getElementById('lightbox-next').addEventListener('click', () => navigate(1));
-
+ 
   lightbox.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox();
   });
-
+ 
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape')     closeLightbox();
@@ -865,5 +862,6 @@ eleventyNavigation:
     if (e.key === 'ArrowRight') navigate(1);
   });
 </script>
-
+ 
 {% endblock %}
+ 
