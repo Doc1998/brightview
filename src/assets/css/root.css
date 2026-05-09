@@ -550,7 +550,25 @@
     width: 100%;
   }
 }
-
+/* Dark Mode */
+@media only screen and (max-width: 63.9375rem) {
+  body.dark-mode #cs-navigation {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-logo {
+    /* makes it white */
+    filter: grayscale(1) brightness(1000%);
+  }
+  body.dark-mode #cs-navigation .cs-line {
+    background-color: #fff;
+  }
+  body.dark-mode #cs-navigation .cs-ul-wrapper {
+    background-color: var(--medium);
+  }
+  body.dark-mode #cs-navigation .cs-li-link {
+    color: var(--bodyTextColorWhite);
+  }
+}
 /*-- -------------------------- -->
 <---     Navigation Dropdown    -->
 <--- -------------------------- -*/
@@ -795,7 +813,8 @@
     align-items: center;
     /* margin-right auto pushes everything away from it to the right */
     margin: 0 auto 0 0;
-
+    height: 8.0625rem;
+    max-width: 21.875rem;
     width: 18.4%;
     padding: 0;
   }

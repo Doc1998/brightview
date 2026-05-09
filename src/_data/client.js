@@ -1,6 +1,6 @@
 module.exports = {
     "name": "Brightview Roof Cleaning",
-    "email": "info@brightviewroofcleaning.ie",
+    "email": "brightviewroofcleaning2002@gmail.com",
     "phoneForTel": "0894046483",
     "phoneFormatted": "(089) 404 6483",
     "address": {
