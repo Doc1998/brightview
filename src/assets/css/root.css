@@ -347,8 +347,8 @@
     align-items: center;
     margin: 0 auto 0 0;
     height: 100%;
-    max-width: 9.125rem;
-    width: 25%;
+    max-width: 4.125rem;
+    width: 40%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0;
@@ -813,8 +813,8 @@
     align-items: center;
     /* margin-right auto pushes everything away from it to the right */
     margin: 0 auto 0 0;
-    height: 8.0625rem;
-    max-width: 21.875rem;
+    height: 100%;
+    max-width: 8.875rem;
     width: 18.4%;
     padding: 0;
   }
